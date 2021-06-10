@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Arctos.Controllers
 {
-    public class CategoryController : Controller
+    public class ApplicationTypeController : Controller
     {
         private readonly ApplicationDbContext _db;
 
-        public CategoryController(ApplicationDbContext db)
+        public ApplicationTypeController(ApplicationDbContext db)
         {
             _db = db;
         }
@@ -20,7 +20,7 @@ namespace Arctos.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Category> objList = _db.Category;
+            IEnumerable<ApplicationType> objList = _db.ApplicationType;
             return View(objList);
         }
 
@@ -34,16 +34,11 @@ namespace Arctos.Controllers
         // POST - CREATE
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Category obj)
+        public IActionResult Create(ApplicationType obj)
         {
-            if (ModelState.IsValid)
-            {
-                _db.Category.Add(obj);
-                _db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(obj);
-            
+            _db.ApplicationType.Add(obj);
+            _db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }

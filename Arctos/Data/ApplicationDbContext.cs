@@ -9,10 +9,13 @@ namespace Arctos.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        // Configuration to use the DbContext
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 
         }
+        // Properties to phus to database
         public DbSet<Category> Category { get; set; }
+        public DbSet<ApplicationType> ApplicationType { get; set; }
     }
 }

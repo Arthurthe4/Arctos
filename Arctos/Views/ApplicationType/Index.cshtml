@@ -1,14 +1,14 @@
-﻿@model IEnumerable<Arctos.Models.Category>
+﻿@model IEnumerable<Arctos.Models.ApplicationType >
 
 
 <div class="container p-3">
     <div class="row pt-4">
         <div class="col-6">
-            <h2 class="text-primary">Category List</h2>
+            <h2 class="text-primary">Application Type List</h2>
         </div>
         <div class="col-6 text-right">
-            <a asp-controller="Category" asp-action="Create" class="btn btn-primary">
-                Create New Category
+            <a asp-action="Create" class="btn btn-primary">
+                Create New Application Type
             </a>
         </div>
     </div>
@@ -21,11 +21,9 @@
                     <thead>
                         <tr>
                             <th>
-                                Category Name
+                                Name
                             </th>
-                            <th>
-                                Dsiplay Order
-                            </th>
+                           
                             <th></th>
                         </tr>
                     </thead>
@@ -34,7 +32,6 @@
                         {
                         <tr>
                             <td width="50%">@obj.Name</td>
-                            <td width="30%">@obj.DisplayOrder</td>
                             <td></td>
                         </tr>
                         }
@@ -43,7 +40,7 @@
             } 
             else
             {
-                <p>No Category Do Exists.</p>
+                <p>No Application Type Do Exists.</p>
             }
 </div>
 
