@@ -1,4 +1,5 @@
 ﻿using Arctos.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Arctos.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext
     {
         // Configuration to use the DbContext
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
