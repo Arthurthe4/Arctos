@@ -2,10 +2,10 @@
 
 <div class="container">
     <div class="text-center">
-        <button class="btn btn-dark filter-button" data-filter="all">All</button>
+        <button class="btn btn-white filter-button" style="border:1px solid #000;" data-filter="all">All</button>
         @foreach (var obj in Model.Categories)
         {
-            <button class="btn btn-outline-secondary filter-button" data-filter="@obj.Name.Replace(' ','_')">
+            <button class="btn btn-white filter-button" style="border:1px solid #000;" data-filter="@obj.Name.Replace(' ','_')">
                 @obj.Name
             </button>
         }
